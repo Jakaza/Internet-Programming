@@ -14,8 +14,7 @@
         %>
         <h2>User Generated Number is  <%= toss%></h2>
         <h2>Computer guess is  <%= compguess%></h2>
-        <h2>Computer guess is <%= result%></h2>
-        <br><!-- comment -->       
+        <h2>Computer guess is <%= result%></h2>     
         <h2>Click <a href="userquess.jsp">here</a> to continue or <a href="EndGameSevlet.do">here</a> to end game</h2>
     </body>
 </html>
