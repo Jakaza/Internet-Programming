@@ -25,7 +25,7 @@ public class GameServlet extends HttpServlet {
     Integer userguess = Integer.parseInt(request.getParameter("userguess"));
     
     // Determine output
-    String result = gamehandler.determineResult(toss, userguess, "user");
+    String result = gamehandler.determineResult(userguess,toss, "user");
     
     request.setAttribute("result", result);
     request.setAttribute("toss", toss);

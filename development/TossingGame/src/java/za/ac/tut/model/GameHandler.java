@@ -27,12 +27,7 @@ public class GameHandler {
         Integer number = rand.nextInt(2);
         return number;
     }
-    public String determineResult(Integer guess, Integer generatedToss , String userOrComp){
-        
-        if(guess != 0 || guess != 1){
-            throw new NumberRangeException("Invalid Number (The Value be 1 or 0)");
-        }
-     
+    public String determineResult(Integer guess, Integer generatedToss , String userOrComp){      
         String output = "WRONG";
         Integer correct = (Integer)session.getAttribute(userOrComp+"Correct");
         Integer total = (Integer)session.getAttribute(userOrComp+"Total");

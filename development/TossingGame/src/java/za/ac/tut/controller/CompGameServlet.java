@@ -25,7 +25,7 @@ public class CompGameServlet extends HttpServlet {
     Integer compGuess = gamehandler.computerGuessToss();
     
     // Determine output
-    String result = gamehandler.determineResult(compGuess, toss , "computer");
+    String result = gamehandler.determineResult(toss,compGuess,"computer");
     
     request.setAttribute("result", result);
     request.setAttribute("toss", toss);

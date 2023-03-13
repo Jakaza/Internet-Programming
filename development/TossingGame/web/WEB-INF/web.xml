@@ -36,6 +36,10 @@
         <exception-type>java.lang.NumberFormatException</exception-type>
         <location>/numberFormatException.jsp</location>
     </error-page>
+    <error-page>
+        <exception-type>za.ac.tut.model.NumberRangeException</exception-type>
+        <location>/numberRangeException.jsp</location>
+    </error-page>
     <session-config>
         <session-timeout>
             30
