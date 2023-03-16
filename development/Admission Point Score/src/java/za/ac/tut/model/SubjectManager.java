@@ -40,8 +40,12 @@ public class SubjectManager {
         return aps;
     }
 
-    public String getOutcome(Integer aps , String major) {
-        String outcome = "Do not meet requirements.";
+    public String getOutcome(Integer aps , String major, boolean comStatus) {
+        String outcome = "Do not meet requirements";
+        
+        if(comStatus == false){
+           return outcome + " : failed major subject."; 
+        }
         if(((major.equals("mathematics") || (major.equals("tech"))) && aps >= 26)
                 || (major.equals("lit") && aps >= 28))
         {
@@ -53,6 +57,21 @@ public class SubjectManager {
            outcome = "Meet requirements for extended program."; 
         }        
         return outcome;
+    }
+    
+    public boolean checkMajors(Integer[] composary){
+        for(Integer mark : composary){
+            if(mark > 7){
+                if(mark < 30){
+                    return false;
+                }
+            }else if(mark <= 2 ){
+                return false;
+            }else{
+                return true;
+            }
+        }
+        return true;
     }
     
 }

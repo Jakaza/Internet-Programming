@@ -34,8 +34,14 @@ public class SubjectSevlet extends HttpServlet {
 
         Integer[] marks = {math, sub1,sub2, sub3, sub4 , sub5}; 
         SubjectManager subjectManager = new SubjectManager();
+        
+        // A must to pass these subject to meet requirements
+        Integer[] comMarks = {math,sub1,sub2};
+        boolean comStatus = subjectManager.checkMajors(marks);
+        
         Integer aps = subjectManager.calculateAPS(marks);
-        String outcome = subjectManager.getOutcome(aps , major);
+                
+        String outcome = subjectManager.getOutcome(aps , major , comStatus);
         
         request.setAttribute("aps", aps);
         request.setAttribute("outcome", outcome);
