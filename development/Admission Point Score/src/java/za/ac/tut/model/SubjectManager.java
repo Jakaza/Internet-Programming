@@ -42,15 +42,15 @@ public class SubjectManager {
 
     public String getOutcome(Integer aps , String major) {
         String outcome = "Do not meet requirements.";
-        if((major.equals("mathematics") && aps >= 26)
+        if(((major.equals("mathematics") || (major.equals("tech"))) && aps >= 26)
                 || (major.equals("lit") && aps >= 28))
         {
-           outcome += "Meet requirements for mainstream."; 
+           outcome = "Meet requirements for mainstream."; 
         }
-        else if((major.equals("mathematics") && aps >= 23)
+        else if(((major.equals("mathematics") || (major.equals("tech"))) && aps >= 23)
                     ||(major.equals("lit") && aps >= 25))
         {
-           outcome += "Meet requirements for extended program."; 
+           outcome = "Meet requirements for extended program."; 
         }        
         return outcome;
     }

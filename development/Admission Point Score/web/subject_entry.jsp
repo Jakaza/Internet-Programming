@@ -22,10 +22,10 @@
             </tr>
             <tr>
                 <th>
-                    <select>
+                    <select name="major">
                         <option value="math">Mathematics</option>
-                        <option value="math-t">Technical Mathematics</option>
-                        <option value="math-l">Math Literacy</option>
+                        <option value="tech">Technical Mathematics</option>
+                        <option value="lit">Math Literacy</option>
                     </select>
                 </th>
                 <th>

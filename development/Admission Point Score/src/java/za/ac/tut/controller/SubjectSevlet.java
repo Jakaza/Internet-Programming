@@ -24,21 +24,23 @@ public class SubjectSevlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         
-        Integer sub1 = Integer.parseInt(request.getParameter("subject1-mark"));
-        Integer sub2 = Integer.parseInt(request.getParameter("subject2-mark"));
-        Integer sub3 = Integer.parseInt(request.getParameter("subject3-mark"));
-        Integer sub4 = Integer.parseInt(request.getParameter("subject4-mark"));
-        Integer sub5 = Integer.parseInt(request.getParameter("subject5-mark"));
-        
-        Integer[] marks = {sub1,sub2, sub3, sub4 , sub5}; 
-        
+        String major = request.getParameter("major");
+        Integer math = Integer.parseInt(request.getParameter("math"));
+        Integer sub1 = Integer.parseInt(request.getParameter("subject2-mark"));
+        Integer sub2 = Integer.parseInt(request.getParameter("subject3-mark"));
+        Integer sub3 = Integer.parseInt(request.getParameter("subject4-mark"));
+        Integer sub4 = Integer.parseInt(request.getParameter("subject5-mark"));
+        Integer sub5 = Integer.parseInt(request.getParameter("subject6-mark"));
+
+        Integer[] marks = {math, sub1,sub2, sub3, sub4 , sub5}; 
         SubjectManager subjectManager = new SubjectManager();
         Integer aps = subjectManager.calculateAPS(marks);
-        String outcome = subjectManager.getOutcome(aps);
+        String outcome = subjectManager.getOutcome(aps , major);
         
         request.setAttribute("aps", aps);
         request.setAttribute("outcome", outcome);
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("output.jsp");
+        requestDispatcher.forward(request, response);
     }
 }
