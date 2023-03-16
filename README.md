@@ -9,6 +9,8 @@
 - **Notepad++** and **Netbeans** is our Editor of choice for editing programs
 - **Tomcat** is the Web Server.
 - **TomEE** is an Application Server that we will use in case some of the components needed are not supported by Tomcat.
+- some application deployed locally on **GlassFish**. alternative to **Tomcat**.
+- **GlassFish** is an open-source Jakarta EE platform application server
 - **MySQL** is the Database Management System of choice for database connectivity.
 
 ## The Puporse of Internet Programming 
