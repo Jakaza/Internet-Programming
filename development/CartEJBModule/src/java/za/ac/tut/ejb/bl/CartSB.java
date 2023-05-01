@@ -1,4 +1,4 @@
-package za.ac.tut.ejb.bl;
+package ac.tut.ejb.bl;
 
 import java.util.ArrayList;
 import java.util.List;
